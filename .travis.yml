@@ -1,0 +1,26 @@
+dist: trusty
+sudo: false
+
+language: go
+
+go:
+  - 1.9.x
+  - tip
+
+install:
+- make get-deps
+
+script:
+  - make unit
+
+matrix:
+  allow_failures:
+    - go: tip
+
+branches:
+  only:
+    - master
+
+notifications:
+  slack:
+    secure: lkd0ljfZ91IqG6OVDp4wxIfGfVJnznqE6kmOs7GdogQQ3sO6ixpiv36Tx3uwgY5px8ndwzN0oOAPAK+X5GD3q/km+B3V5csIihyW/VJd1kF3s7sN/UXpul4En5ay+u3Eyg0EQPzKTpEBF/qbRdCXwY52A7py+NgePQu1nK94DZxyGBsLLWq1TdiIdxDXk0M3hWydV92a2S5p+Qgz6u6G7C2yYLQUOnAEIY09v4Rs/IoJIsGtdVX1jfjoWh+uOaZhD79f4Zsg4ykXBrgSPHU6NcoxGEpcPpfkqtQZqvEqJxWDD+6A9iKWGAjoV8cgY09v9can7Jjy+sVXgMpbJRZZvgmXS+RqfShnt1XvEUgyYecehFBX1x70jYxeWayV9UXQWqBotjzSOw9yWasuU2h7lUnRDdc39Vgm1csFPAiRCatyipWZSiv/RjHj27sfqRiS5nkjz5Gei10XolDeL5mCMbX2FaK2xaiIIAx+uy68jpNZK1iGJsAJ21l+YvLiSd1zL2RPJVyMOyUA4S4BQoAY6BY9znyLIVfEBcd9cmoGNoS29GBC+plcS3eI6QfdxmJUloSk+iYWaseT+Gmx0YgSAgK+GvjMP46nyJBFLpNTKmq8WXLcCVE6UIvONsja1wf8zu9lA1E7cgpTCqlTXKjuCC7q55+idLCsK9+baBtCdNc=
